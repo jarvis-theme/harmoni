@@ -1,0 +1,1 @@
+<i class="icon-basket"></i> <strong>{{ price(Shpcart::cart()->total() )}}</strong>
