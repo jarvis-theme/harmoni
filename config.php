@@ -59,11 +59,7 @@ return array(
         'testimonial'=>5,    
     ),
     'banner' => true,
-    'themesColor' => array(
-        'type'=> 'false',
-        'warnaDef'=>'main-color:#724606;hover-color:#a26409;background-color:#eee;line-color:#FBDFB6;subscribe-area:#F5AF48;footer:#5a3705;button:#f2f2f2',
-        'color'=>false
-        ),
+    'themesColor' => false,
     'layout' => false,
 
 );
