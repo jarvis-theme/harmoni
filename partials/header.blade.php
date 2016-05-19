@@ -57,7 +57,7 @@
                     <ul class="nav">
                     @if(count(category_menu()) > 0)
                     {{-- */ $counts = 0; /* --}}
-                    @foreach(category_menu() as $menu)  
+                    @foreach(category_menu() as $menu) 
                         @if($counts < 5)
                             @if($menu->parent == '0') 
                             <li>
@@ -65,7 +65,7 @@
                                 @if(count($menu->anak) > 0)
                                 <div class="dropdown">
                                     <ul>
-                                    @foreach($menu->anak as $submenu)   
+                                    @foreach($menu->anak as $submenu) 
                                         @if($submenu->parent == $menu->id)  
                                         <li>
                                             <a href="{{category_url($submenu)}}">{{$submenu->nama}}</a>
@@ -93,6 +93,6 @@
                     @endforeach 
                     @endif
                     </ul>
-                </nav> 
+                </nav>
             </div>
         </div>

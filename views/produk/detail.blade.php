@@ -102,7 +102,7 @@
                             <p>{{$produk->deskripsi}}</p>
                         </div>
                         <div class="tab-content">
-                            <p>{{fbcommentbox(product_url($produk), '100%', '5', 'light')}}</p>
+                            <p>{{ pluginComment(product_url($produk), @$produk) }}</p>
                         </div>
                     </section>
                 </div>

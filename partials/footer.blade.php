@@ -39,7 +39,7 @@
                     <h4>Newsletter</h4>
                     <form action="{{@$mailing->action}}" method="post" target="_blank">
                         <div class="append field">
-                            <input class="wide email input" type="email" placeholder="Masukkan email anda" {{ @$mailing->action==''?'disabled="disabled"':'' }} />
+                            <input class="wide email input" type="email" placeholder="Masukkan email anda" name="email" {{ @$mailing->action==''?'disabled="disabled"':'' }} />
                             <div class="medium primary btn">
                                 <button type="submit" {{ @$mailing->action==''?'disabled style="cursor:default"':'' }}>Subscribe</button>
                             </div>
@@ -52,27 +52,27 @@
                     <ul>
                         <li>
                             <i class="icon-home"></i>
-                            {{$kontak->alamat}}
+                            {{$kontak->alamat}} 
                         </li>
                         <li>
                             <i class="icon-phone"></i>@if(empty($kontak->telepon) && empty($kontak->hp))
                             -
                             @elseif(!empty($kontak->telepon) && empty($kontak->hp))
-                            {{$kontak->telepon}}
+                            {{$kontak->telepon}} 
                             @elseif(empty($kontak->telepon) && !empty($kontak->hp))
                             {{$kontak->hp}}
                             @else
-                            {{$kontak->telepon.' - '.$kontak->hp}}
+                            {{$kontak->telepon.' - '.$kontak->hp}} 
                             @endif
                         </li>
                         <li>
                            <i class="icon-mobile"></i> {{empty($kontak->bb) ? '-' : $kontak->bb}} <small>(BBM)</small>
                         </li>
                         <li>
-                           <i class="icon-mail"></i> {{$kontak->email}}
+                           <i class="icon-mail"></i> {{$kontak->email}} 
                         </li>
                         <li>
-                            <i class="icon-a"></i> {{ymyahoo($kontak->ym)}}
+                            <i class="icon-a"></i> {{ymyahoo($kontak->ym)}} 
                         </li>
                     </ul>
                 </div>
@@ -112,6 +112,9 @@
                     @if(count(list_dokus()) > 0 && list_dokus()->status == 1)
                     <img class="banks" src="{{url('img/bank/doku.jpg')}}" alt="Doku Payment" title="Doku">
                     @endif
+                    @if(count(list_veritrans()) > 0 && list_veritrans()->status == 1 && list_veritrans()->type == 1)
+                    <img src="{{url('img/bank/veritrans.png')}}" alt="Veritrans" title="Veritrans">
+                    @endif
                 </div>
             </div>
         </aside>
@@ -123,4 +126,4 @@
                 </div>
             </div>
         </footer>
-        {{pluginPowerup()}}
+        {{pluginPowerup()}} 
